@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Rice Learn</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#content">My Documents</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="introduction">
-        <h2>Introduction</h2>
-        <p>This is my personal website where I share my Google Docs with everyone.</p>
-    </section>
-    <section id="content">
-        <h2>My Documents</h2>
-        <p>Here you will find all my documents embedded for easy access.</p>
-        <iframe src="https://docs.google.com/document/d/e/2PACX-1vSY4prennEfnvO1b8ylqSQxgZ-hvD02xIKC8zlTU-1Y3-6dv2zxjle4DEAD4VsOyjViMOoZrwBUqL4d/pub?embedded=true"></iframe>
-    </section>
-    <footer>
-        <p>Copyright © Your Name 2024</p>
-    </footer>
+    <div class="top-section">
+        <img src="images/profile.png" alt="Profile Image" class="profile-image">
+    </div>
+    <hr class="hr">
+    <div class="middle-section">
+        <div class="links">
+            <a href="#introduction" id="introduction-link" class = "unclickable-link" style="color: grey;">Introduction</a>
+            | 
+            <a href="content/content.html" id="content-link">Treasure Notes</a>
+        </div>
+        <div class="summary" id="introduction-content">
+            I am a Staff Machine Learning Scientist at the University of Pennsylvania, where I lead innovative projects that leverage computer vision and machine learning to improve medical diagnostics and outcomes. I have a master's degree in Data Science from Johns Hopkins University, where I gained a solid foundation in data science ethics, responsible conduct of research, and advanced machine learning algorithms.
+        </div>
+    </div>
+    <div class="bottom-section">
+        <div class="icons">
+            <a href="https://www.linkedin.com/in/di-wu-4b967b21b/"><img src="images/linkedin-icon.png" alt="LinkedIn Icon"></a>
+            <a href="https://github.com/dwu12"><img src="images/github-icon.png" alt="GitHub Icon"></a>
+            <a href="mailto:wudi1629@gmail.com"><img src="images/email-icon.png" alt="Email Icon"></a>
+        </div>
+    </div>
 </body>
 </html>
