@@ -20,12 +20,17 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, #ffcc80, #ffb74d); /* Stronger orange gradient */
+    padding-top: 20px; /* Top padding for spacing */
+    padding-bottom: 20px; /* Bottom padding for spacing */
+    box-sizing: border-box;
 }
 
 .profile-image {
-    border-radius: 60%;
-    width: 300px;
-    height: 300px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .middle-section {
@@ -80,11 +85,11 @@ body {
     pointer-events: none;
     color: gray; /* Optional: change the color to indicate it is disabled */
     cursor: default; /* Optional: change the cursor to the default to indicate it is not clickable */
-  }
+}
 
 .hr {
     height: 1px;            /* 线条高度 */
     background-color: white; /* 线条颜色 */
     border: none;           /* 去除默认的边框 */
-    margin: 0.5px 0;         /* 上下边距 */
+    margin: 0.5px 0;        /* 上下边距 */
 }
