@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Notebook</title>
+    <link rel="stylesheet" href="python.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.menu-toggle').click(function() {
+                $('.left-nav').toggleClass('active');
+            });
+            $('.submenu-toggle').click(function() {
+                $(this).next('.submenu').slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="../index.html" class="home-button">Home</a>
+        <span class="menu-toggle">&#9776;</span>
+    </div>
+    <hr class="hr">
+    <div class="content-container">
+        <div class="left-nav">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#basics">Pandas and Numpy</a></li>
+                <li>
+                    <a href="#advanced" class="submenu-toggle">Data Structure &#9660;</a>
+                    <ul class="submenu">
+                        <li><a href="#trees">Trees</a></li>
+                        <li><a href="#graphs">Graphs</a></li>
+                        <li><a href="#algorithms">Algorithms</a></li>
+                    </ul>
+                </li>
+                <li><a href="#examples">Questions</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div id="intro" class="content-section">
+                <h2>Introduction</h2>
+                <p>Welcome to the Python notebook. This section contains THREE main part, numpy and pandas for Machine Learning / Data Scientist, Data Structure for Engineer and Some interview questions .</p>
+            </div>
+            <div id="basics" class="content-section">
+                <h2>Pandas and Numpy</h2>
+                <p>This section covers the basics of Python programming.</p>
+                <img src="../images/python-basics.png" alt="Python Basics">
+                <pre><code class="language-python">
+def hello_world():
+    print("Hello, World!")
+                </code></pre>
+            </div>
+            <div id="advanced" class="content-section">
+                <h2>Advanced Topics</h2>
+                <p>This section covers advanced topics in Python programming.</p>
+                <img src="../images/python-advanced.png" alt="Python Advanced">
+                <pre><code class="language-python">
+class AdvancedExample:
+    def __init__(self):
+        self.message = "This is an advanced example"
+
+    def display_message(self):
+        print(self.message)
+                </code></pre>
+            </div>
+            <div id="trees" class="content-section">
+                <h2>Trees</h2>
+                <p>This section covers tree data structures in Python.</p>
+                <img src="../images/trees.png" alt="Trees">
+            </div>
+            <div id="graphs" class="content-section">
+                <h2>Graphs</h2>
+                <p>This section covers graph data structures in Python.</p>
+                <img src="../images/graphs.png" alt="Graphs">
+            </div>
+            <div id="algorithms" class="content-section">
+                <h2>Algorithms</h2>
+                <p>This section covers algorithms in Python.</p>
+                <img src="../images/algorithms.png" alt="Algorithms">
+            </div>
+            <div id="examples" class="content-section">
+                <h2>Examples</h2>
+                <p>This section contains various Python programming examples.</p>
+                <img src="../images/python-examples.png" alt="Python Examples">
+            </div>
+            <div id="resources" class="content-section">
+                <h2>Resources</h2>
+                <p>This section provides resources for learning more about Python programming.</p>
+                <img src="../images/python-resources.png" alt="Python Resources">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

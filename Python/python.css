@@ -1,0 +1,165 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background: white; /* Body background is white */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Ensure the body does not exceed viewport width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.top-nav {
+    width: 100%;
+    background: #ffcc80; /* Light orange background for top nav */
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.home-button {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: #ff7043; /* Darker orange background for Home button */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px; /* Space around the Home button */
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #d65b2a;
+}
+
+.menu-toggle {
+    display: none; /* Hide menu toggle by default */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.content-container {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.left-nav {
+    width: 220px;
+    background: #ffcc80; /* Light orange background for left nav */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 60px; /* Adjust based on the height of the top nav */
+    bottom: 0;
+    overflow-y: auto;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: transform 0.3s ease-in-out;
+}
+
+.left-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+.left-nav ul li {
+    margin: 15px 0;
+}
+
+.left-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.left-nav ul li a:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateX(5px);
+}
+
+.submenu {
+    display: none;
+    margin-left: 15px;
+}
+
+.submenu li {
+    margin: 10px 0;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 240px; /* Ensure content is not under the left nav */
+    background: white; /* Body background is white */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section h2 {
+    color: #333;
+}
+
+.content-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+.content-section pre {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.hr {
+    height: 1px;
+    background-color: white;
+    border: none;
+    margin: 0.5px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .left-nav {
+        position: fixed;
+        transform: translateX(-100%);
+        width: 220px;
+        top: 0;
+        height: 100vh;
+        z-index: 1000;
+    }
+    
+    .left-nav.active {
+        transform: translateX(0);
+    }
+    
+    .menu-toggle {
+        display: block; /* Show menu toggle on small screens */
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+}
