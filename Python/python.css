@@ -20,25 +20,25 @@ body {
     padding: 10px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align items to the start */
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.home-button {
+.home-button, .treasure-button {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    background-color: #ff7043; /* Darker orange background for Home button */
+    background-color: #ff7043; /* Darker orange background for buttons */
     padding: 10px 20px;
     border-radius: 5px;
-    margin: 5px; /* Space around the Home button */
+    margin: 5px; /* Space around the buttons */
     transition: background-color 0.3s;
 }
 
-.home-button:hover {
+.home-button:hover, .treasure-button:hover {
     background-color: #d65b2a;
 }
 
