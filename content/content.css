@@ -57,10 +57,38 @@ body {
 }
 
 .summary {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
     font-size: 18px;
     color: #333;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+.summary p {
+    margin: 20px 0;
+    text-align: justify;
+    text-indent: 2em;
+    animation: fadeIn 2s;
+}
+
+.summary a {
+    color: #333;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.summary a:hover {
+    color: #ff7043; /* Darker orange */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .bottom-section {
@@ -76,10 +104,16 @@ body {
     margin-top: 20px;
 }
 
-.icons img {
+.icons .icon {
     width: 60px;
     height: 60px;
     margin: 0 20px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.icons .icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
 }
 
 .unclickable-link {
@@ -89,17 +123,17 @@ body {
 }
 
 .hr {
-    height: 1px;            /* 线条高度 */
-    background-color: white; /* 线条颜色 */
-    border: none;           /* 去除默认的边框 */
-    margin: 0.5px 0;        /* 上下边距 */
+    height: 1px;
+    background-color: white;
+    border: none;
+    margin: 0.5px 0;
 }
 
 .links-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -137,5 +171,9 @@ body {
 @media (max-width: 480px) {
     .links-grid {
         grid-template-columns: 1fr; /* 1 column for extra small screens */
+    }
+
+    .summary {
+        padding: 0 10px;
     }
 }
