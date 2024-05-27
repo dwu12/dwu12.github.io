@@ -17,6 +17,13 @@
         });
     </script>
 </head>
+
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+<link rel="manifest" href="../favicon_io/site.webmanifest">
+
 <body>
     <div class="top-nav">
         <a href="../index.html" class="home-button">Home</a>
@@ -29,70 +36,187 @@
                 <li><a href="#intro">Introduction</a></li>
                 <li><a href="#basics">Pandas and Numpy</a></li>
                 <li>
-                    <a href="#advanced" class="submenu-toggle">Data Structure &#9660;</a>
+                    <a href="#data-structure" class="submenu-toggle">Data Structure &#9660;</a>
                     <ul class="submenu">
-                        <li><a href="#trees">Trees</a></li>
-                        <li><a href="#graphs">Graphs</a></li>
-                        <li><a href="#algorithms">Algorithms</a></li>
+                        <li><a href="#arrays-strings">Arrays and Strings</a></li>
+                        <li><a href="#hashing">Hashing</a></li>
+                        <li><a href="#linked-lists">Linked Lists</a></li>
+                        <li><a href="#stacks-queues">Stacks and Queues</a></li>
+                        <li><a href="#trees-graphs">Trees and Graphs</a></li>
+                        <li><a href="#heaps">Heaps</a></li>
+                        <li><a href="#binary-search">Binary Search</a></li>
+                        <li><a href="#greedy-algorithms">Greedy Algorithms</a></li>
+                        <li><a href="#backtracking">Backtracking</a></li>
+                        <li><a href="#dynamic-programming">Dynamic Programming</a></li>
+                        <li><a href="#other">Other</a></li>
                     </ul>
                 </li>
-                <li><a href="#examples">Questions</a></li>
+                <li><a href="#questions">Questions</a></li>
             </ul>
         </div>
         <div class="main-content">
             <div id="intro" class="content-section">
                 <h2>Introduction</h2>
-                <p>Welcome to the Python notebook. This section contains THREE main part, numpy and pandas for Machine Learning / Data Scientist, Data Structure for Engineer and Some interview questions .</p>
+                <p>Welcome to the Python notebook. This section contains THREE main parts: numpy and pandas for Machine Learning / Data Scientist, Data Structure for Engineer, and Some interview questions.</p>
             </div>
             <div id="basics" class="content-section">
                 <h2>Pandas and Numpy</h2>
-                <p>This section covers the basics of Python programming.</p>
-                <img src="../images/python-basics.png" alt="Python Basics">
-                <pre><code class="language-python">
-def hello_world():
-    print("Hello, World!")
-                </code></pre>
+                <p>Check <a href="https://github.com/dwu12/Machine-Learning-Project/blob/main/Python%20Manipulation/Python%20Data%20Manipulation.ipynb">here</a> for all Topics related to: </p>
+                <ol>
+                    <li>Relative Path vs Absolute Path</li>
+                    <li>Read & Save .csv file </li>
+                    <li>Data consolidation </li>
+                    <ul>
+                        <li>Merge</li>
+                        <li>Join</li>
+                        <li>Concat</li>
+                    </ul>
+                    <li>Data Manipulation</li>
+                    <ul>
+                        <li>Data Shape</li>
+                        <li>Data Type</li>
+                        <li>Missing Value</li>
+                        <li>Slicing</li>
+                        <li>Filtering</li>
+                        <li>Aggregation</li>
+                        <li>Sorting</li>
+                    </ul>
+                    <li>Visualization</li>
+                    <ul>
+                        <li>Pie Chart</li>
+                        <li>Bar Chart</li>
+                        <li>Scatter Plot</li>
+                        <li>Histogram</li>
+                        <li>Heatmap</li>
+                        <li>Pair Plot</li>
+                        <li>Count Plot</li>
+                        <li>Line Plot</li>
+                    </ul>
+                </ol>
+                
             </div>
-            <div id="advanced" class="content-section">
-                <h2>Advanced Topics</h2>
-                <p>This section covers advanced topics in Python programming.</p>
-                <img src="../images/python-advanced.png" alt="Python Advanced">
-                <pre><code class="language-python">
-class AdvancedExample:
-    def __init__(self):
-        self.message = "This is an advanced example"
+            <div id="data-structure" class="content-section">
+                <h2>Data Structure</h2>
+                <!-- Plots and Big O Notation -->
+                <div class="fancy-text">
+                    <h3>Introduction to Data Structures</h3>
+                    <img src="../images/plot1.png" alt="Plot 1" class="responsive-image">
+                    <img src="../images/plot2.png" alt="Plot 2" class="responsive-image">
+                    <p>Big O Notation is used to describe the performance or complexity of an algorithm.</p>
+                </div>
+                <div id="arrays-strings">
+                    <h3>Arrays and Strings</h3>
+                    <!-- Content for Arrays and Strings -->
+                    <pre><code class="language-python">
+                        def example_array():
+                            array = [1, 2, 3, 4, 5]
+                            return array
+                    </code></pre>
+                    <pre><code class="language-python">
+### Two pointers: one input, opposite ends
 
-    def display_message(self):
-        print(self.message)
-                </code></pre>
+def fn(arr):
+    left = ans = 0
+    right = len(arr) - 1
+
+    while left < right:
+        # do some logic here with left and right
+        if CONDITION:
+            left += 1
+        else:
+            right -= 1
+    
+    return ans
+                    </code></pre>
+                </div>
+                <div id="hashing">
+                    <h3>Hashing</h3>
+                    <!-- Content for Hashing -->
+                </div>
+                <div id="linked-lists">
+                    <h3>Linked Lists</h3>
+                    <!-- Content for Linked Lists -->
+                </div>
+                <div id="stacks-queues">
+                    <h3>Stacks and Queues</h3>
+                    <!-- Content for Stacks and Queues -->
+                </div>
+                <div id="trees-graphs">
+                    <h3>Trees and Graphs</h3>
+                    <!-- Content for Trees and Graphs -->
+                </div>
+                <div id="heaps">
+                    <h3>Heaps</h3>
+                    <!-- Content for Heaps -->
+                </div>
+                <div id="binary-search">
+                    <h3>Binary Search</h3>
+                    <!-- Content for Binary Search -->
+                </div>
+                <div id="greedy-algorithms">
+                    <h3>Greedy Algorithms</h3>
+                    <!-- Content for Greedy Algorithms -->
+                </div>
+                <div id="backtracking">
+                    <h3>Backtracking</h3>
+                    <!-- Content for Backtracking -->
+                </div>
+                <div id="dynamic-programming">
+                    <h3>Dynamic Programming</h3>
+                    <!-- Content for Dynamic Programming -->
+                </div>
+                <div id="other">
+                    <h3>Other</h3>
+                    <!-- Content for Other -->
+                </div>
             </div>
-            <div id="trees" class="content-section">
-                <h2>Trees</h2>
-                <p>This section covers tree data structures in Python.</p>
-                <img src="../images/trees.png" alt="Trees">
-            </div>
-            <div id="graphs" class="content-section">
-                <h2>Graphs</h2>
-                <p>This section covers graph data structures in Python.</p>
-                <img src="../images/graphs.png" alt="Graphs">
-            </div>
-            <div id="algorithms" class="content-section">
-                <h2>Algorithms</h2>
-                <p>This section covers algorithms in Python.</p>
-                <img src="../images/algorithms.png" alt="Algorithms">
-            </div>
-            <div id="examples" class="content-section">
-                <h2>Examples</h2>
-                <p>This section contains various Python programming examples.</p>
-                <img src="../images/python-examples.png" alt="Python Examples">
-            </div>
-            <div id="resources" class="content-section">
-                <h2>Resources</h2>
-                <p>This section provides resources for learning more about Python programming.</p>
-                <img src="../images/python-resources.png" alt="Python Resources">
+            <div id="questions" class="content-section">
+                <h2>Python Questions</h2>
+<ol>
+    <li>
+        <h3>Generate an array of ‘100’ random numbers sampled from a standard normal distribution using Numpy</h3>
+        <p>np.random.rand(100) will create 100 random numbers generated from a standard normal distribution with mean 0 and standard deviation 1.</p>
+    </li>
+    <li>
+        <h3>How to count the occurrence of each value in a numpy array?</h3>
+        <p>Use numpy.bincount()</p>
+        <pre><code>arr = numpy.array([0, 5, 5, 0, 2, 4, 3, 0, 0, 5, 4, 1, 9, 9])
+numpy.bincount(arr)</code></pre>
+        <p>The argument to bincount() must consist of booleans or positive integers. Negative integers are invalid.</p>
+    </li>
+    <li>
+        <h3>What does ravel() function in numpy do?</h3>
+        <p>It combines multiple arrays into a single array.</p>
+    </li>
+    <li>
+        <h3>What is the meaning of axis=0 and axis=1?</h3>
+        <p>Axis = 0 is meant for reading rows, Axis = 1 is meant for reading columns.</p>
+    </li>
+    <li>
+        <h3>Feature Engineering</h3>
+        <ol>
+            <li>
+                <h4>Selection</h4>
+                <p>Feature Importance Report (AWS Sagemaker Wranglering)</p>
+            </li>
+            <li>
+                <h4>Creation</h4>
+                <p>Combine multiple columns into one column.</p>
+            </li>
+            <li>
+                <h4>Transformation</h4>
+                <p>Missing Feature Values (Imputation), Scaling Numerical features (standardization/normalization), Converting Non-numerical features into numerical features (One-hot, label encoder, word2vec, etc)</p>
+            </li>
+        </ol>
+    </li>
+    <li>
+        <h3>Shuffle the data</h3>
+        <pre><code>df = df.sample(frac=1)</code></pre>
+    </li>
+</ol>
+
             </div>
         </div>
     </div>
 </body>
 </html>
-
