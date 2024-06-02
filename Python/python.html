@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Notebook</title>
+    <title>Python Note</title>
     <link rel="stylesheet" href="python.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -11,9 +11,22 @@
             $('.menu-toggle').click(function() {
                 $('.left-nav').toggleClass('active');
             });
-            $('.submenu-toggle').click(function() {
-                $(this).next('.submenu').slideToggle();
+            $('.submenu-toggle').click(function(event) {
+                event.preventDefault();
+                $(this).next('.submenu').slideToggle(300);
+                // Toggle the arrow direction
             });
+            $('.left-nav a').click(function(event) {
+                // Check if the clicked link is not a submenu toggle
+                if (!$(this).hasClass('submenu-toggle')) {
+                    event.preventDefault();
+                    var target = $(this).attr('href');
+                    $('html, body').animate({
+                        scrollTop: $(target).offset().top
+                    }, 500);
+                }
+            });
+
         });
     </script>
 </head>
@@ -26,8 +39,7 @@
 
 <body>
     <div class="top-nav">
-        <a href="../index.html" class="home-button">Home</a>
-        <a href="../content/content.html" class="treasure-button">Treasure Note</a>
+        <a href="../content/content.html" class="home-button">Note</a>
         <span class="menu-toggle">&#9776;</span>
     </div>
     <hr class="hr">
@@ -58,7 +70,7 @@
         <div class="main-content">
             <div id="intro" class="content-section">
                 <h2>Introduction</h2>
-                <p>Welcome to the Python notebook. This section contains THREE main parts: numpy and pandas for Machine Learning / Data Scientist, Data Structure for Engineer, and Some interview questions.</p>
+                <p>Welcome to the Python notebook. This section contains THREE main parts: <strong>numpy and pandas</strong> for Machine Learning / Data Scientist, <strong>Data Structure</strong> for Engineer, and Some <strong>interview questions</strong>.</p>
             </div>
             <div id="basics" class="content-section">
                 <h2>Pandas and Numpy</h2>
@@ -101,19 +113,27 @@
                 <!-- Plots and Big O Notation -->
                 <div class="fancy-text">
                     <h3>Introduction to Data Structures</h3>
-                    <img src="../images/plot1.png" alt="Plot 1" class="responsive-image">
-                    <img src="../images/plot2.png" alt="Plot 2" class="responsive-image">
-                    <p>Big O Notation is used to describe the performance or complexity of an algorithm.</p>
+                    <img src="../images/data-structure/data-structure.png" alt="Data Structure" class="responsive-image">
+                    <p>
+                        Big O is a notation used to describe the computational complexity of an
+                        algorithm. The computational complexity of an algorithm is split into two parts:
+                        time complexity and space complexity.
+                    </p>
+                    <ul>
+                        <li>
+                            The <strong>time complexity </strong>of an algorithm is the amount of time
+                        the algorithm needs to run relative to the input size. </li>
+                        <li>
+                            The <strong>space complexity</strong> of an algorithm is the amount of
+                        memory allocated by the algorithm when run relative to the input size. </li>
+                        
+                    </ul>
                 </div>
                 <div id="arrays-strings">
                     <h3>Arrays and Strings</h3>
                     <!-- Content for Arrays and Strings -->
-                    <pre><code class="language-python">
-                        def example_array():
-                            array = [1, 2, 3, 4, 5]
-                            return array
-                    </code></pre>
-                    <pre><code class="language-python">
+                    <li><strong>Two Pointers:</strong> LC ( 557, 917, 283, 2000)
+                        <pre class="prettyprint">
 ### Two pointers: one input, opposite ends
 
 def fn(arr):
@@ -128,93 +148,657 @@ def fn(arr):
             right -= 1
     
     return ans
-                    </code></pre>
+                        </pre>
+                        <p>
+                        </p>
+                        
+                        
+                        <pre class="prettyprint">
+### Two pointers: two inputs, exhaust both
+
+def fn(arr1, arr2):
+    i = j = ans = 0
+    while i &lt; len(arr1) and j &lt; len(arr2):
+        # do some logic here
+        if CONDITION:
+            i += 1
+        else:
+            j += 1
+    
+    while i &lt; len(arr1):
+        # do logic
+        i += 1
+    
+    while j &lt; len(arr2):
+        # do logic
+        j += 1
+    
+    return ans
+                        </pre>
+                       
+                        <li><strong>Sliding Window:</strong>  LC ( 209, 1456, 1208)</li>
+                        <pre class="prettyprint">
+def fn(arr):
+    left = ans = curr = 0
+
+    for right in range(len(arr)):
+        # do logic here to add arr[right] to curr
+
+        while WINDOW_CONDITION_BROKEN:
+            # remove arr[left] from curr
+            left += 1
+
+        # update ans
+    
+    return ans
+
+                        </pre>
+                        
+                        
+                        <li><strong>Prefix Sum: </strong>LC (1732, 724, 303)</li>
+                        
+                        <p>
+                        </p>
+                        
+                        
+                        <pre class="prettyprint">
+def fn(arr):
+    prefix = [arr[0]]
+    for i in range(1, len(arr)):
+        prefix.append(prefix[-1] + arr[i])
+
+    return prefix
+                        </pre>
+                        <ol>
                 </div>
                 <div id="hashing">
                     <h3>Hashing</h3>
+                    <ol>
+                        <li>Only thing we should know ( Use dict and set )</li>
+                        <li>Checking for exist: LC ( 217, 1436, 1496)</li>
+                        <li>Counting: LC (1748, 1394, 1207, 451, 1512, 930, 1685, 567)</li>
+                        <li>General: LC (205, 290, 791, 1657)</li>
+                    </ol>
+
+                    <pre class="prettyprint">
+from collections import defaultdict
+                    </pre>
                     <!-- Content for Hashing -->
                 </div>
+
+
                 <div id="linked-lists">
                     <h3>Linked Lists</h3>
                     <!-- Content for Linked Lists -->
+                    <ul>
+                        <li><strong>Fast and Slow Pointer</strong></li>
+                    </ul>
+                        <pre class='prettyprint'>
+def fn(head):
+    slow = head
+    fast = head
+    ans = 0
+
+    while fast and fast.next:
+        # do logic
+        slow = slow.next
+        fast = fast.next.next
+    
+    return ans
+                        </pre>
+
+                    <ul>
+                        <li><strong>Reverse a LinkedList</strong></li>
+                    </ul>
+                        <pre class='prettyprint'>
+def fn(head):
+    curr = head
+    prev = None
+    while curr:
+        next_node = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next_node 
+        
+    return prev
+                        </pre>
                 </div>
+
+
                 <div id="stacks-queues">
                     <h3>Stacks and Queues</h3>
                     <!-- Content for Stacks and Queues -->
+                    <ul>
+                        <li><strong>from collections import deque</strong></li>
+                        <ul>
+                            <li>deque.append(xxx)</li>
+                            <li>deque.popleft()</li>
+                        </ul>
+                    </ul>
+
+                    <ul>
+                        <li><strong>Find number of subarrays that fit an exact criteria</strong></li>
+                    </ul>
+                    <pre class="prettyprint">
+from collections import defaultdict
+
+def fn(arr, k):
+    counts = defaultdict(int)
+    counts[0] = 1
+    ans = curr = 0
+
+    for num in arr:
+        # do logic to change curr
+        ans += counts[curr - k]
+        counts[curr] += 1
+    
+    return ans
+
+                    </pre>
+
+                    <ul>
+                        <li><strong>Monotonic Increasing Stack</strong></li>
+                    </ul>
+                    <pre class="prettyprint">
+def fn(arr):
+    stack = []
+    ans = 0
+
+    for num in arr:
+        # for monotonic decreasing, just flip the > to <
+        while stack and stack[-1] > num:
+            # do logic
+            stack.pop()
+        stack.append(num)
+    
+    return ans
+                    </pre>
+
                 </div>
                 <div id="trees-graphs">
                     <h3>Trees and Graphs</h3>
                     <!-- Content for Trees and Graphs -->
+                    <ul>
+                        <li><strong>Binary Tree (DFS, recursive)</strong></li>
+                    </ul>
+                    <pre class="prettyprint">
+def dfs(root):
+    if not root:
+        return
+    
+    ans = 0
+
+    # do logic
+    dfs(root.left)
+    dfs(root.right)
+    return ans
+                    </pre>
+                    
+                    <ul>
+                        <li><strong>
+                            Binary Tree (DFS, Iterative)
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+def dfs(root):
+    stack = [root]
+    ans = 0
+
+    while stack:
+        node = stack.pop()
+        # do logic
+        if node.left:
+            stack.append(node.left)
+        if node.right:
+            stack.append(node.right)
+
+    return ans
+                    </pre>
+
+                    <ul>
+                        <li><strong>Binary Tree (BFS, Recursive)</strong></li>
+                    </ul>
+                    <pre class="prettyprint">
+from collections import deque
+
+def fn(root):
+    queue = deque([root])
+    ans = 0
+
+    while queue:
+        current_length = len(queue)
+        # do logic for current level
+
+        for _ in range(current_length):
+            node = queue.popleft()
+            # do logic
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+
+    return ans
+                    </pre>
+
+                    <ul>
+                        <li><strong>
+                            Binary Search Tree (example)
+                        </strong></li>
+                        <p><strong>Trick:</strong> For binary search tree, a depth first search with inorder will give you the sorted list 
+                        </p>
+                    </ul>
+
+                    <pre class="prettyprint">
+def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+    if not root:
+        return 0
+
+    ans = 0
+    if low <= root.val <= high:
+        ans += root.val
+    if low < root.val:
+        ans += self.rangeSumBST(root.left, low, high)
+    if root.val < high:
+        ans += self.rangeSumBST(root.right, low, high)
+
+    return ans
+                    </pre>
+                    
+
+                    <ul>
+                        <li><strong>Graph: DFS (recursive)</strong></li>
+                    </ul>
+                    <pre class="prettyprint">
+def fn(graph):
+    def dfs(node):
+        ans = 0
+        # do some logic
+        for neighbor in graph[node]:
+            if neighbor not in seen:
+                seen.add(neighbor)
+                ans += dfs(neighbor)
+        
+        return ans
+
+    seen = {START_NODE}
+    return dfs(START_NODE)
+                    </pre>
+
+                    <ul>
+                        <li><strong>Graph: DFS (iterative)</strong></li>
+                    </ul>
+                    <pre class="prettyprint">
+def fn(graph):
+    stack = [START_NODE]
+    seen = {START_NODE}
+    ans = 0
+
+    while stack:
+        node = stack.pop()
+        # do some logic
+        for neighbor in graph[node]:
+            if neighbor not in seen:
+                seen.add(neighbor)
+                stack.append(neighbor)
+    
+    return ans   
+                    </pre>
+
+                    <ul>
+                        <li><strong>Graph: BFS</strong></li>
+                    </ul>
+                    <pre class="prettyprint">
+from collections import deque
+
+def fn(graph):
+    queue = deque([START_NODE])
+    seen = {START_NODE}
+    ans = 0
+
+    while queue:
+        node = queue.popleft()
+        # do some logic
+        for neighbor in graph[node]:
+            if neighbor not in seen:
+                seen.add(neighbor)
+                queue.append(neighbor)
+    
+    return ans 
+                    </pre>
+
                 </div>
+
+
                 <div id="heaps">
                     <h3>Heaps</h3>
                     <!-- Content for Heaps -->
+                    <ul>
+                        <li><strong>
+                            Find top k elements with heap
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+import heapq
+
+def fn(arr, k):
+    heap = []
+    for num in arr:
+        # do some logic to push onto heap according to problem's criteria
+        heapq.heappush(heap, (CRITERIA, num))
+        if len(heap) > k:
+            heapq.heappop(heap)
+    
+    return [num for num in heap]
+                    </pre>
                 </div>
+
+
                 <div id="binary-search">
                     <h3>Binary Search</h3>
                     <!-- Content for Binary Search -->
+                    <ul>
+                        <li><strong>
+                            Binary search
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+def fn(arr, target):
+    left = 0
+    right = len(arr) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if arr[mid] == target:
+            # do something
+            return
+        if arr[mid] > target:
+            right = mid - 1
+        else:
+            left = mid + 1
+    
+    # left is the insertion point
+    return left
+
+
+                    </pre>
+                    <ul>
+                        <li><strong>
+                            Binary search: duplicate elements, left-most insertion point
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+def fn(arr, target):
+    left = 0
+    right = len(arr)
+    while left < right:
+        mid = (left + right) // 2
+        if arr[mid] >= target:
+            right = mid
+        else:
+            left = mid + 1
+
+    return left
+
+
+                    </pre>
+                    <ul>
+                        <li><strong>
+                            Binary search: duplicate elements, right-most insertion point
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+def fn(arr, target):
+    left = 0
+    right = len(arr)
+    while left < right:
+        mid = (left + right) // 2
+        if arr[mid] > target:
+            right = mid
+        else:
+            left = mid + 1
+
+    return left
+                    </pre>
                 </div>
+
+
                 <div id="greedy-algorithms">
                     <h3>Greedy Algorithms</h3>
                     <!-- Content for Greedy Algorithms -->
+                    <ul>
+                        <li><strong>
+                            Binary search: for greedy problems (Minimum)
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">       
+def fn(arr):
+    def check(x):
+        # this function is implemented depending on the problem
+        return BOOLEAN
+
+    left = MINIMUM_POSSIBLE_ANSWER
+    right = MAXIMUM_POSSIBLE_ANSWER
+    while left <= right:
+        mid = (left + right) // 2
+        if check(mid):
+            right = mid - 1
+        else:
+            left = mid + 1
+
+    return left
+
+
+                    </pre>
+
+
+                    <ul>
+                        <li><strong>
+                            Binary search: for greedy problems (Maximum)
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+def fn(arr):
+    def check(x):
+        # this function is implemented depending on the problem
+        return BOOLEAN
+
+    left = MINIMUM_POSSIBLE_ANSWER
+    right = MAXIMUM_POSSIBLE_ANSWER
+    while left <= right:
+        mid = (left + right) // 2
+        if check(mid):
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return right
+                    </pre>
                 </div>
+
+
                 <div id="backtracking">
                     <h3>Backtracking</h3>
                     <!-- Content for Backtracking -->
+
+                    <ul>
+                        <li><strong>
+                            Backtracking
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+def backtrack(curr, OTHER_ARGUMENTS...):
+    if (BASE_CASE):
+        # modify the answer
+        return
+    
+    ans = 0
+    for (ITERATE_OVER_INPUT):
+        # modify the current state
+        ans += backtrack(curr, OTHER_ARGUMENTS...)
+        # undo the modification of the current state
+    
+    return ans
+                    </pre>
+
                 </div>
+
+
                 <div id="dynamic-programming">
                     <h3>Dynamic Programming</h3>
                     <!-- Content for Dynamic Programming -->
+
+                    <ul>
+                        <li><strong>
+                            Dynamic programming: top-down memoization
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+def fn(arr):
+    def dp(STATE):
+        if BASE_CASE:
+            return 0
+        
+        if STATE in memo:
+            return memo[STATE]
+        
+        ans = RECURRENCE_RELATION(STATE)
+        memo[STATE] = ans
+        return ans
+
+    memo = {}
+    return dp(STATE_FOR_WHOLE_INPUT)
+                    </pre>
+
                 </div>
+
+
                 <div id="other">
                     <h3>Other</h3>
                     <!-- Content for Other -->
+
+                    <ul>
+                        <li><strong>
+                            Build a trie
+                        </strong></li>
+                    </ul>
+
+                    <pre class="prettyprint">
+                        
+# note: using a class is only necessary if you want to store data at each node.
+# Otherwise, you can implement a trie using only hash maps.
+
+class TrieNode:
+    def __init__(self):
+        # you can store data at nodes if you wish
+        self.data = None
+        self.children = {}
+
+def fn(words):
+    root = TrieNode()
+    for word in words:
+        curr = root
+        for c in word:
+            if c not in curr.children:
+                curr.children[c] = TrieNode()
+            curr = curr.children[c]
+        # at this point, you have a full word at curr
+        # you can perform more logic here to give curr an attribute if you want
+    
+ 	   return root
+
+
+                    </pre>
+
+
                 </div>
+
+
             </div>
             <div id="questions" class="content-section">
                 <h2>Python Questions</h2>
-<ol>
-    <li>
-        <h3>Generate an array of ‘100’ random numbers sampled from a standard normal distribution using Numpy</h3>
-        <p>np.random.rand(100) will create 100 random numbers generated from a standard normal distribution with mean 0 and standard deviation 1.</p>
-    </li>
-    <li>
-        <h3>How to count the occurrence of each value in a numpy array?</h3>
-        <p>Use numpy.bincount()</p>
-        <pre><code>arr = numpy.array([0, 5, 5, 0, 2, 4, 3, 0, 0, 5, 4, 1, 9, 9])
-numpy.bincount(arr)</code></pre>
-        <p>The argument to bincount() must consist of booleans or positive integers. Negative integers are invalid.</p>
-    </li>
-    <li>
-        <h3>What does ravel() function in numpy do?</h3>
-        <p>It combines multiple arrays into a single array.</p>
-    </li>
-    <li>
-        <h3>What is the meaning of axis=0 and axis=1?</h3>
-        <p>Axis = 0 is meant for reading rows, Axis = 1 is meant for reading columns.</p>
-    </li>
-    <li>
-        <h3>Feature Engineering</h3>
-        <ol>
-            <li>
-                <h4>Selection</h4>
-                <p>Feature Importance Report (AWS Sagemaker Wranglering)</p>
-            </li>
-            <li>
-                <h4>Creation</h4>
-                <p>Combine multiple columns into one column.</p>
-            </li>
-            <li>
-                <h4>Transformation</h4>
-                <p>Missing Feature Values (Imputation), Scaling Numerical features (standardization/normalization), Converting Non-numerical features into numerical features (One-hot, label encoder, word2vec, etc)</p>
-            </li>
-        </ol>
-    </li>
-    <li>
-        <h3>Shuffle the data</h3>
-        <pre><code>df = df.sample(frac=1)</code></pre>
-    </li>
-</ol>
+                <ol>
+                    <li><strong>Generate an array of ‘100’ random numbers sampled from a standard
+                    normal distribution using Numpy</strong>
+                    <p>
+                        np.random.rand(100) will create 100 random numbers generated from standard
+                    normal distribution with mean 0 and standard deviation 1.
+                    </p>
+                    </li>
+                
+                    <li><strong>How to count the occurrence of each value in a numpy array?</strong>
+                    <p>
+                        Use numpy.bincount()
+                    </p>
+                    <p>
+                        >>> arr = numpy.array([0, 5, 5, 0, 2, 4, 3, 0, 0, 5, 4, 1, 9, 9])
+                    </p>
+                    <p>
+                        >>> numpy.bincount(arr)
+                    </p>
+                    <p>
+                        The argument to bincount() must consist of booleans or positive integers.
+                    Negative integers are invalid.
+                    </p>
+                    </li>
+
+                    <li><strong>What does ravel() function in numpy do?</strong>
+                    </li>
+                    
+                    <p>
+                    <strong>	</strong>
+                    </p>
+                    <p>
+                    <strong>	</strong>It combines multiple array into a single array
+                    </p>
+
+                    <li><strong>What is the meaning of axis=0 and axis=1? </strong>
+                    </li>
+
+                    <p>
+                    </p>
+                    <p>
+                        Axis = 0 is meant for reading rows, Axis = 1 is meant for reading columns
+                    </p>
+         
+                    <li><strong>Feature Engineering: </strong>
+                    <ol>
+                    <li>Selection
+                    <ol>
+                    <li>Feature Importance Report (AWS Sagemaker Wranglering)
+                    </li>
+                    </ol>
+                    <li>Creation (Existing data points into new features, new attributes)
+                    <ol>
+                    <li>Combine multiple columns to one column
+                    </li>
+                    </ol>
+                    <li>Transformation
+                    <ol>
+                    <li>Missing Feature Values (Imputation)
+                    <li>Scaling Numerical features (standardization / normalization)
+                    <li>Converting Non-numerical features into numerical features (One-hot, label
+                    encoder, word2vec, etc)
+                    </li>
+                    </ol>
+                    <li><a
+                    href="https://towardsdatascience.com/feature-engineering-for-machine-learning-3a5e293a5114">Feature
+                    Engineering</a>
+                    </li>
+
+                </ol>
+                <p>
+                </p>
+                    <li><strong>Shuffle the data: </strong>df = df.sample(frac = 1)
+                    </li>
+                    </ol>
 
             </div>
         </div>
