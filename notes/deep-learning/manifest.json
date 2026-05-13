@@ -1,0 +1,43 @@
+{
+  "topic": "Deep Learning",
+  "items": [
+    {
+      "name": "General DL",
+      "folder": "general-dl",
+      "children": []
+    },
+    {
+      "name": "Computer Vision",
+      "folder": "computer-vision",
+      "children": [
+        {
+          "name": "General Computer Vision",
+          "folder": "general-computer-vision",
+          "children": [
+            {
+              "name": "AlexNet",
+              "folder": "alexnet",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Object Detection",
+          "folder": "object-detection",
+          "children": [
+            {
+              "name": "R-CNN",
+              "folder": "r-cnn",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NLP",
+      "folder": "nlp",
+      "children": []
+    }
+  ]
+}
