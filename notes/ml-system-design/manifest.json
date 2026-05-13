@@ -1,1 +1,12 @@
-{"topic": "ML System Design", "items": [{"name": "ML System Design", "folder": "ml-system-design", "children": []}]}
+{
+  "topic": "ML System Design",
+  "items": [
+    {"name": "ML System Design Principles", "folder": "ml_system_design_principles", "children": []},
+    {"name": "Project Setup", "folder": "project_setup", "children": []},
+    {"name": "Data Pipeline", "folder": "data_pipeline", "children": []},
+    {"name": "Modeling and Training", "folder": "modeling_and_training", "children": []},
+    {"name": "Scaling", "folder": "scaling", "children": []},
+    {"name": "Serving", "folder": "serving", "children": []},
+    {"name": "ML System Design Template", "folder": "ml_system_design_template", "children": []}
+  ]
+}

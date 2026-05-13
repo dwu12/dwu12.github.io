@@ -1,1 +1,13 @@
-{"topic": "Product Sense", "items": [{"name": "Product Sense", "folder": "product-sense", "children": []}]}
+{
+  "topic": "Product Sense",
+  "items": [
+    {"name": "Metrics", "folder": "metrics", "children": []},
+    {"name": "Metrics Diagnosis", "folder": "metrics_diagnosis", "children": []},
+    {"name": "Product Success Measurement", "folder": "product_success_measurement", "children": []},
+    {"name": "Launch Decision", "folder": "launch_decision", "children": []},
+    {"name": "Applied Data Framework", "folder": "applied_data_framework", "children": []},
+    {"name": "A/B Test", "folder": "ab_test", "children": []},
+    {"name": "Terminology", "folder": "terminology", "children": []},
+    {"name": "Questions", "folder": "questions", "children": []}
+  ]
+}
