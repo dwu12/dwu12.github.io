@@ -7,7 +7,7 @@
 // Configuration
 // ============================================
 
-const NOTES_BASE_PATH = '.';
+const NOTES_BASE_PATH = 'notes';
 const NOTES_TOPIC_PATH = './notes';
 
 // Topic order (sorted alphabetically)
@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         await initNotesPage();
     }
     initMobileMenu();
+    initTOC();
 });
 
 // ============================================
@@ -76,16 +77,19 @@ async function initNotesPage() {
             const manifestPath = `${NOTES_BASE_PATH}/${topic}/manifest.json`;
             try {
                 const response = await fetch(manifestPath);
+                console.log('Fetching:', manifestPath, 'Status:', response.status);
                 if (response.ok) {
                     const manifest = await response.json();
                     manifests[topic] = manifest;
+                    console.log('Loaded manifest for:', topic);
                 }
             } catch (e) {
-                // No manifest for this topic
+                console.log('No manifest for:', topic, e.message);
             }
         }
 
         folderStructure = buildFolderStructure();
+        console.log('Folder structure built, topics:', folderStructure.length);
         renderSidebar(folderStructure);
 
         if (window.location.hash) {
@@ -299,10 +303,29 @@ async function loadMarkdownFile(filePath) {
 function showMarkdown(html) {
     welcomeState.style.display = 'none';
     markdownBody.style.display = 'block';
+
+    // First insert HTML, then render math
     markdownBody.innerHTML = html;
 
     if (window.Prism) {
         Prism.highlightAll();
+    }
+
+    // Render LaTeX with KaTeX after a small delay to ensure DOM is ready
+    if (typeof renderMathInElement === 'function') {
+        setTimeout(() => {
+            renderMathInElement(markdownBody, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '\\(', right: '\\)', display: false}
+                ],
+                throwOnError: false
+            });
+        }, 50);
+    } else {
+        console.warn('KaTeX renderMathInElement not loaded');
     }
 
     const links = markdownBody.querySelectorAll('a');
@@ -313,12 +336,16 @@ function showMarkdown(html) {
             link.setAttribute('rel', 'noopener noreferrer');
         }
     });
+
+    // Update TOC after content is rendered
+    updateTOC();
 }
 
 function showWelcome() {
     welcomeState.style.display = 'flex';
     markdownBody.style.display = 'none';
     currentFile = null;
+    hideTOCButton();
 }
 
 function showLoading() {
@@ -389,3 +416,91 @@ window.addEventListener('hashchange', () => {
         showWelcome();
     }
 });
+
+// ============================================
+// Floating Table of Contents
+// ============================================
+
+const tocToggle = document.getElementById('tocToggle');
+const tocPanel = document.getElementById('tocPanel');
+const tocNav = document.getElementById('tocNav');
+const tocClose = document.getElementById('tocClose');
+
+function initTOC() {
+    if (!tocToggle || !tocPanel) return;
+
+    tocToggle.addEventListener('click', () => {
+        tocPanel.classList.toggle('open');
+    });
+
+    tocClose.addEventListener('click', () => {
+        tocPanel.classList.remove('open');
+    });
+}
+
+function buildTOC(headings) {
+    if (!tocNav) return;
+
+    tocNav.innerHTML = '';
+
+    headings.forEach(heading => {
+        const link = document.createElement('a');
+        link.href = '#' + heading.id;
+        link.textContent = heading.text;
+        link.className = heading.level;
+
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.getElementById(heading.id);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+                tocPanel.classList.remove('open');
+            }
+        });
+
+        tocNav.appendChild(link);
+    });
+}
+
+function extractHeadings() {
+    if (!markdownBody) return [];
+
+    const headings = [];
+    const elements = markdownBody.querySelectorAll('h1, h2, h3, h4');
+
+    elements.forEach((el, index) => {
+        if (!el.id) {
+            el.id = 'heading-' + index;
+        }
+        headings.push({
+            id: el.id,
+            text: el.textContent,
+            level: 'h' + el.tagName.toLowerCase()
+        });
+    });
+
+    return headings;
+}
+
+function showTOCButton() {
+    if (tocToggle) {
+        tocToggle.classList.add('visible');
+    }
+}
+
+function hideTOCButton() {
+    if (tocToggle) {
+        tocToggle.classList.remove('visible');
+        tocPanel.classList.remove('open');
+    }
+}
+
+function updateTOC() {
+    const headings = extractHeadings();
+    if (headings.length > 0) {
+        buildTOC(headings);
+        showTOCButton();
+    } else {
+        hideTOCButton();
+    }
+}

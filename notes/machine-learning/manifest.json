@@ -1,1 +1,24 @@
-{"topic": "Machine Learning", "items": [{"name": "Machine Learning", "folder": "machine-learning", "children": []}]}
+{
+  "topic": "Machine Learning",
+  "items": [
+    {"name": "KNN", "folder": "knn", "children": []},
+    {"name": "K-Means", "folder": "kmeans", "children": []},
+    {"name": "Naive Bayes", "folder": "naive_bayes", "children": []},
+    {"name": "Linear Regression", "folder": "linear_regression", "children": []},
+    {"name": "Regularization", "folder": "regularization", "children": []},
+    {"name": "Logistic Regression", "folder": "logistic_regression", "children": []},
+    {"name": "SVM", "folder": "svm", "children": []},
+    {"name": "Decision Tree", "folder": "decision_tree", "children": []},
+    {"name": "Random Forest", "folder": "random_forest", "children": []},
+    {"name": "AdaBoost", "folder": "adaboost", "children": []},
+    {"name": "GBoost", "folder": "gboost", "children": []},
+    {"name": "XGBoost", "folder": "xgboost", "children": []},
+    {"name": "PCA", "folder": "pca", "children": []},
+    {"name": "Latent Dirichlet Allocation", "folder": "latent_dirichlet_allocation", "children": []},
+    {"name": "Linear Discriminant Analysis", "folder": "linear_discriminant_analysis", "children": []},
+    {"name": "Bayesian Optimization", "folder": "bayesian_optimization", "children": []},
+    {"name": "Genetic Algorithm", "folder": "genetic_algorithm", "children": []},
+    {"name": "ML Metrics", "folder": "ml_metrics", "children": []},
+    {"name": "ML Questions", "folder": "ml_questions", "children": []}
+  ]
+}

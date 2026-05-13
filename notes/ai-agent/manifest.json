@@ -1,1 +1,21 @@
-{"topic": "AI Agent", "items": [{"name": "AI Agent", "folder": "ai-agent", "children": []}]}
+{
+  "topic": "AI Agent",
+  "items": [
+    {"name": "AI Agent General Concept", "folder": "general_concept", "children": []},
+    {"name": "AI Agent Paper", "folder": "ai_agent_paper", "children": [
+      {"name": "CoT", "folder": "cot", "children": []},
+      {"name": "Agent AI", "folder": "agent_ai", "children": []},
+      {"name": "ChatDev", "folder": "chatdev", "children": []},
+      {"name": "ReWoo", "folder": "rewoo", "children": []},
+      {"name": "HuggingGPT", "folder": "hugginggpt", "children": []},
+      {"name": "t-bench", "folder": "t_bench", "children": []},
+      {"name": "PlanBench", "folder": "planbench", "children": []},
+      {"name": "AgentSquare", "folder": "agent_square", "children": []}
+    ]},
+    {"name": "Computer Use", "folder": "computer_use", "children": []},
+    {"name": "MCP", "folder": "mcp", "children": []},
+    {"name": "A2A", "folder": "a2a", "children": []},
+    {"name": "Voice Agent", "folder": "voice_agent", "children": []},
+    {"name": "LLM & Agent Memory", "folder": "llm_agent_memory", "children": []}
+  ]
+}

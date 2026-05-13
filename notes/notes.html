@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes | Di Wu</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <base href="/">
+    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 </head>
 <body>
     <div class="noise-overlay"></div>
@@ -14,7 +16,7 @@
     <div class="app-container">
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <a href="../index.html" class="back-home">
+                <a href="/index.html" class="back-home">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                     <span>Home</span>
                 </a>
@@ -42,6 +44,20 @@
                     <!-- Markdown content rendered here -->
                 </article>
 
+                <!-- Floating TOC -->
+                <button class="toc-toggle" id="tocToggle" title="Table of Contents">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <div class="toc-panel" id="tocPanel">
+                    <div class="toc-header">
+                        <span>Table of Contents</span>
+                        <button class="toc-close" id="tocClose">&times;</button>
+                    </div>
+                    <nav class="toc-nav" id="tocNav">
+                        <!-- Dynamically populated -->
+                    </nav>
+                </div>
+
                 <div class="loading-state" id="loadingState" style="display: none;">
                     <div class="spinner"></div>
                     <p>Loading...</p>
@@ -51,10 +67,12 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

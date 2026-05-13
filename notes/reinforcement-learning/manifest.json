@@ -1,1 +1,19 @@
-{"topic": "Reinforcement Learning", "items": [{"name": "Reinforcement Learning", "folder": "reinforcement-learning", "children": []}]}
+{
+  "topic": "Reinforcement Learning",
+  "items": [
+    {"name": "Basic Concept", "folder": "basic_concept", "children": []},
+    {"name": "Q-Learning", "folder": "q_learning", "children": []},
+    {"name": "Deep Q Learning", "folder": "deep_q_learning", "children": []},
+    {"name": "Policy Gradient", "folder": "policy_gradient", "children": []},
+    {"name": "TRPO & PPO", "folder": "trpo_ppo", "children": []},
+    {"name": "RLHF", "folder": "rlhf", "children": []},
+    {"name": "DPO", "folder": "dpo", "children": []},
+    {"name": "ReFT", "folder": "reft", "children": []},
+    {"name": "GRPO", "folder": "grpo", "children": []},
+    {"name": "DAPO", "folder": "dapo", "children": []},
+    {"name": "Dr GRPO", "folder": "dr_grpo", "children": []},
+    {"name": "GDPO", "folder": "gdpo", "children": []},
+    {"name": "SDPO", "folder": "sdpo", "children": []},
+    {"name": "Rubric-Based Reward RL", "folder": "rubric_based_reward", "children": []}
+  ]
+}
