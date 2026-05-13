@@ -2,18 +2,18 @@
   "topic": "Python",
   "items": [
     {
-      "name": "Python Data Science Skills",
+      "name": "Python Data Science",
       "folder": "python-data-science-skills",
-      "children": []
-    },
-    {
-      "name": "Python Questions",
-      "folder": "python-questions",
       "children": []
     },
     {
       "name": "Data Structure",
       "folder": "data-structure",
+      "children": []
+    },
+    {
+      "name": "Python Questions",
+      "folder": "python-questions",
       "children": []
     }
   ]
