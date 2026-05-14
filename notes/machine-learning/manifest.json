@@ -3,6 +3,7 @@
   "items": [
     {"name": "KNN", "folder": "knn", "children": []},
     {"name": "K-Means", "folder": "kmeans", "children": []},
+    {"name": "DBSCAN", "folder": "dbscan", "children": []},
     {"name": "Naive Bayes", "folder": "naive_bayes", "children": []},
     {"name": "Linear Regression", "folder": "linear_regression", "children": []},
     {"name": "Regularization", "folder": "regularization", "children": []},

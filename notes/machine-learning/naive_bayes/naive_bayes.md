@@ -14,10 +14,24 @@ Where:
 - $P(x)$ : Evidence probability
 
 Given a class variable $y$ and dependent feature vector $x_1$ to $x_n$:
-$$P(y|x_1, ..., x_n) = \frac{P(y) P(x_1, ..., x_n|y)}{P(x_1, ..., x_n)}$$
 
-With the naive independent assumption:
-$$P(x_i|y)$ for all $i$ are mutually independent
+<p align="center">
+  $$P(y|x_1, ..., x_n) = \frac{P(y)\Pi_{i=1}^n P(x_1, ..., x_n|y)}{P(x_1, ..., x_n)}$$
+</p>
+
+
+With the naive independent assumption: $P(x_i|y)$ for all $i$ are mutually independent. The equation could be writen as: 
+
+<p align="center">
+  $$P(y|x_1, ..., x_n) = \frac{P(y) P(x_i|y)}{P(x_1, ..., x_n)}$$
+</p>
+
+Where: 
+
+<p align="center">
+  $$P(x_i|y) = \frac{1}{\sqrt{2\pi\sigma_{y}^2}} exp(- \frac{(x_i - \mu_y)^2}{2\sigma_{y}^2} )$$
+</p>
+
 
 ## How it Works
 

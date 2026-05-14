@@ -2,11 +2,21 @@
 
 ## Definition
 
-Logistic Regression is a parametric supervised machine learning algorithm like linear regression but with **discrete target variables**, commonly used for **binary classification**. It maps independent variables linearly to the log odds (logit) of certain events.
+Logistic Regression is also a parametric supervised machine learning algorithm like linear regression but with discrete target variables, usually used for binary classification. It maps all the independent variables linearly to the log odds of certain events happening.  Unlike linear regression, the **logit / log odds** (success / failure)  will form a linear regression line, where y is the probability that is: 
 
-**Log Odds:** $log(\frac{y}{1-y}) = wx + b$
+$$log(\frac{y}{1-y}) = wx + b$$
 
-**Sigmoid Function:** $y = \frac{e^{wx+b}}{1 + e^{-(wx+b)}} = sigmoid(wx+b)$
+By Transformation we have Sigmoid Function:
+$$y = \frac{e^{wx+b}}{1 + e^{-(wx+b)}} = sigmoid(wx+b)$$
+
+Unlike linear regression that has closed form, logistic regression doesn’t have a closed form solution. Instead, cross-entropy loss will be used:
+
+$$
+\begin{align*}
+    J(w) &= -\frac{1}{m}\sum_{i=1}^m y_i logP(1|x_i,w) + (1 - y_i) log(1- P(0|x_i,w)) \\
+        &=-\frac{1}{m}\sum_{i=1}^m y_i log\sigma(w^Tx_i) + (1 - y_i) log(1- \sigma(w^Tx_i))
+\end{align*}
+$$
 
 ## How it Works
 

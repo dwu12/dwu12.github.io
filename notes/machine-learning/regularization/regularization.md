@@ -35,11 +35,12 @@ $\lambda$ (lambda) is a tuning parameter that controls how much we penalize the 
 
 ## Visual Interpretation
 
-![Regularization placeholder](./images/regularization_contour.png)
+![Regularization placeholder](/notes/machine-learning/regularization/images/regularization.png)
+
 
 **What do the shapes mean?**
-- **Square (L1)**: $|beta_1| + |beta_2| < C$ - corners can touch contour at axes (coefficients become 0)
-- **Circle (L2)**: $beta_1^2 + beta_2^2 < C$ - smooth curve, rarely touches axes
+- **Square (L1)**: $|\beta_1| + |\beta_2| < C$ - corners can touch contour at axes (coefficients become 0)
+- **Circle (L2)**: $\beta_1^2 + \beta_2^2 < C$ - smooth curve, rarely touches axes
 - **Contour**: Each line represents equal SSE values; center is the OLS estimate
 
 ## When to Use

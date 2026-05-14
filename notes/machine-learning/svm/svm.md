@@ -20,10 +20,15 @@ SVM is a parametric supervised machine learning algorithm that tries to find a *
 - **Soft Margin (C = small):** Allow misclassification → high bias, low variance
 - C is inversely proportional to λ (regularization strength)
 
-**Cost Function (Hinge Loss):**
+**Cost Function (Hinge Loss):** $L(y) = \max(0, 1-ty)$
+
 $$J(w) = \frac{1}{2}||w||^2 + C \left[ \frac{1}{N} \sum \max(0, 1 - y_i(wx_i+b)) \right]$$
 
-Where large λ gives large margin and vice versa.
+$$J(w) = \frac{\lambda}{2}||w||^2 +  \frac{1}{N} \sum \max(0, 1 - y_i(wx_i+b)) $$
+
+Where:
+$$\lambda = \frac{1}{c}$$ 
+A large $\lambda$ gives large margin and vice versa.
 
 ## Kernel Trick (Handling Non-Separable Data)
 
@@ -38,6 +43,8 @@ When data is not linearly separable:
 - Gaussian Radial Basis Function (RBF)
 - Gaussian Kernel
 - Sigmoid Kernel
+
+![SVM](/notes/machine-learning/svm/images/svm.png)
 
 ## Assumption
 
@@ -70,13 +77,13 @@ When data is not linearly separable:
 
 [SVM Notebook](https://github.com/dwu12/Machine-Learning-Project/blob/main/machine%20learning/SVM.ipynb)
 
-## Additional Notes
+----
 
-### Maximum Margin Classifier
+## Maximum Margin Classifier
 
 The goal is to find the hyperplane equidistant from both classes, maximizing the margin. This is sensitive to outliers - only support vectors matter.
 
-### Hard vs Soft Margin
+## Hard vs Soft Margin
 
 - **Hard Margin:** No misclassification allowed (assumes linearly separable data)
 - **Soft Margin:** Allow some misclassification inside the margin (bias-variance trade-off)

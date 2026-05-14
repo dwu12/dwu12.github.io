@@ -22,7 +22,24 @@ K-means is an unsupervised **machine learning algorithm** that separates data in
 3. Similar density across clusters
 4. Works poorly for non-globular shapes
 
-![Cluster assumptions placeholder](./images/kmeans_assumptions.png)
+
+<div style="text-align: center;">
+  Size 
+</div>
+
+![Cluster Size](/notes/machine-learning/kmeans/images/size.png)
+
+<div style="text-align: center;">
+  Density 
+</div>
+
+![Cluster Density](/notes/machine-learning/kmeans/images/density.png)
+
+<div style="text-align: center;">
+  Non-Globular Shape
+</div>
+
+![Cluster non-globular](/notes/machine-learning/kmeans/images/non-globular.png)
 
 ## Pros / Advantages
 
@@ -43,9 +60,9 @@ K-means is an unsupervised **machine learning algorithm** that separates data in
 
 [K-Means Notebook](https://github.com/dwu12/Machine-Learning-Project/blob/main/machine%20learning/k-means.ipynb)
 
-## Additional Notes
+----
 
-### Fuzzy-C-Means
+## Fuzzy-C-Means
 
 Instead of placing samples in the shortest distance cluster, Fuzzy-C uses probability to indicate all clusters.
 

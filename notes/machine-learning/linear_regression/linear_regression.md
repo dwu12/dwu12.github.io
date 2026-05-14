@@ -12,10 +12,13 @@ $$y = w_1x_1 + w_2x_2 + ... + w_nx_n + b$$
 Linear regression finds the weights $w$ and bias $b$ that minimize the Mean Squared Error (MSE):
 $$MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2$$
 
-**Closed-form Solution:**
+1. Closed-form Solution:
 $$\theta = (X^T X)^{-1} X^T y$$
 
-Or solved iteratively using gradient descent to minimize the cost function.
+2. Or solved iteratively using gradient descent to minimize the cost function.
+
+$$\sum(y-(mx + b))^2$$   
+
 
 ## Assumption (Key 4 Assumptions)
 

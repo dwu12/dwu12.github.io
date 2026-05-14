@@ -47,18 +47,18 @@ Example Hamming Distance:
 
 [KNN Notebook](https://github.com/dwu12/Machine-Learning-Project/blob/main/machine%20learning/KNN.ipynb)
 
-## Additional Notes
+----
 
-### SMOTE (Synthetic Minority Oversampling Technique)
+## SMOTE (Synthetic Minority Oversampling Technique)
 
 SMOTE is used to address class imbalance by generating synthetic minority samples.
+
+![SMOTE](/notes/machine-learning/knn/images/smote.png)
 
 **Note:** SMOTE can violate multicollinearity assumption for linear regression because the new generated points lie on the line of existing points.
 
 **How SMOTE works:**
-1. Randomly select a minority class sample xi
-2. Find the K-nearest neighbors (xj) of xi
-3. Draw a line between xj and xi
+1. Randomly select a minority class sample $x_i$
+2. Find the K-nearest neighbors ($x_j$) of $x_i$
+3. Draw a line between $x_j$ and $x_i$
 4. Generate synthetic minority instance from the line
-
-![SMOTE placeholder](./images/smote.png)
