@@ -321,7 +321,13 @@ function showMarkdown(html) {
                     {left: '\\[', right: '\\]', display: true},
                     {left: '\\(', right: '\\)', display: false}
                 ],
-                throwOnError: false
+                throwOnError: false,
+                strict: false,
+                trust: true,
+                macros: {
+                    "\\RAS": "\\mathcal{RAS}",
+                    "\\given": "\\middle|"
+                }
             });
         }, 50);
     } else {

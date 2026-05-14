@@ -1,8 +1,7 @@
-> Original Post from: [Chip Huyen](https://huyenchip.com/machine-learning-systems-design/design-a-machine-learning-system.html)
-
 # ML System Design Principles
 
 > Original Post from: [Chip Huyen](https://huyenchip.com/machine-learning-systems-design/design-a-machine-learning-system.html)
+
 
 ## Iterative Process
 
@@ -12,6 +11,8 @@ Designing a machine learning system is an **iterative process** that contains:
 2. Data Pipeline
 3. Modeling (selecting, training, and debugging your model)
 4. Serving (testing, deploying, and maintaining)
+
+![SMOTE](/notes/ml-system-design/ml_system_design_principles/images/ml_system_design.png)
 
 The output from one step might be used to update previous steps, for example:
 

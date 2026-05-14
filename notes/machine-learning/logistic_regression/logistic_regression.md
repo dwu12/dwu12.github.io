@@ -12,10 +12,10 @@ $$y = \frac{e^{wx+b}}{1 + e^{-(wx+b)}} = sigmoid(wx+b)$$
 Unlike linear regression that has closed form, logistic regression doesn’t have a closed form solution. Instead, cross-entropy loss will be used:
 
 $$
-\begin{align*}
-    J(w) &= -\frac{1}{m}\sum_{i=1}^m y_i logP(1|x_i,w) + (1 - y_i) log(1- P(0|x_i,w)) \\
-        &=-\frac{1}{m}\sum_{i=1}^m y_i log\sigma(w^Tx_i) + (1 - y_i) log(1- \sigma(w^Tx_i))
-\end{align*}
+\begin{aligned}
+    J(w) &= -\frac{1}{m}\sum_{i=1}^m y_i \log P(1|x_i,w) + (1 - y_i) \log(1- P(0|x_i,w)) \cr
+        &= -\frac{1}{m}\sum_{i=1}^m y_i \log\sigma(w^Tx_i) + (1 - y_i) \log(1- \sigma(w^Tx_i))
+\end{aligned}
 $$
 
 ## How it Works

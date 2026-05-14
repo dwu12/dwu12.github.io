@@ -879,3 +879,38 @@ body {
         justify-content: center;
     }
 }
+
+/* ============================================
+   KaTeX Multi-line Equation Support
+   ============================================ */
+.katex-display {
+    text-align: center;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.katex-display > .katex {
+    text-align: center;
+}
+
+.katex .mtable {
+    vertical-align: middle;
+}
+
+/* Ensure alignment markers (&) work properly */
+.katex .align {
+    text-align: center;
+}
+
+.katex .align-top {
+    vertical-align: top;
+}
+
+.katex .align-bottom {
+    vertical-align: bottom;
+}
+
+.katex .align-middleware {
+    vertical-align: middle;
+}
